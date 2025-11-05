@@ -5,33 +5,61 @@
         <title>Генерация таблиц расчётов сети Байеса</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
-    <body class="container mt-4">
-        <div class="mb-3" id="upload_data" name="upload_data">
-            <h2 class="mb-4">Загрука данных о лекарствах, побочных действиях</h2>
-            <form id="data_form" name="data_form">
-                <label for="data" class="form-label">Загрузить файл с данными о лекарствах, побочных действиях</label>
-                <input type="file" class="form-control" accept=".json" required id="data" name="file"/>
-                <input type="submit" class="btn btn-primary" value="Загрузить"/>
-                <input type="reset" class="btn btn-secondary" value="Отмена"/>
-            </form>
+    <body class="container mt-4 mb-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold">Генерация таблиц расчётов сети байеса</h1>
+            <p class="lead text-muted">Загрузите данные и граф, чтобы начать расчёты</p>
         </div>
-        <div class="mb-3">
-            <h2 class="mb-4">Загрузка семантического графа для сети Байеса</h2>
-            <form id="graph_form" name="graph_form">
-                <label for="graph_file" class="form-label">Загрузить файл с графом</label>
-                <input type="file" class="form-control" accept=".json" required id="graph_file" name="graph_file"/>
-                <label for="propabilities" class="form-label">Загрузить файл с вероятностями</label>
-                <input type="file" class="form-control" accept=".json" required id="propability_file" name="propability_file"/>
-                <input type="submit" class="btn btn-primary" value="Загрузить"/>
-                <input type="reset" class="btn btn-secondary" value="Отмена"/>
-            </form>
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-4">Загрузка данных о лекарствах, побочных действиях</h2>
+            </div>
+            <div class="card-body">
+                <form id="data_form" name="data_form">
+                    <div class="mb-3">
+                        <label for="data" class="form-label">Загрузить файл с данными о лекарствах, побочных действиях</label>
+                        <input type="file" class="form-control" accept=".json" required id="data" name="file"/>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <input type="submit" class="btn btn-primary" value="Загрузить"/>
+                        <input type="reset" class="btn btn-secondary" value="Отмена"/>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="mb-3">
-            <h2 class="mb-4">Выгрузка результов расчётов сети Байеса и модели на Фортрана</h2>
-            <form id="table_form" name="table_form">
-                <label for="download_table">Выгрузить таблицу расчётов</label>
-                <input type="submit" class="btn btn-success" id="download_table" value="Скачать"/>
-            </form>
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h2 class="mb-4">Загрузка семантического графа для сети Байеса</h2>
+            </div>
+            <div class="card-body">
+                <form id="graph_form" name="graph_form">
+                    <div class="mb-3">
+                        <label for="graph_file" class="form-label">Загрузить файл с графом</label>
+                        <input type="file" class="form-control" accept=".json" required id="graph_file" name="graph_file"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="propabilities" class="form-label">Загрузить файл с вероятностями</label>
+                        <input type="file" class="form-control" accept=".json" required id="propability_file" name="propability_file"/>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <input type="submit" class="btn btn-primary" value="Загрузить"/>
+                        <input type="reset" class="btn btn-secondary" value="Отмена"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-info text-white">
+                <h2 class="mb-4">Выгрузка результов расчётов сети Байеса и модели на Фортрана</h2>
+            </div>
+            <div class="card-body">
+                <form id="table_form" name="table_form">
+                    <div class="d-flex gap-2">
+                        <label for="download_table">Выгрузить таблицу расчётов</label>
+                        <input type="submit" class="btn btn-success" id="download_table" value="Скачать"/>
+                    </div>
+                </form>
+            </div>
         </div>
         <script src="/static/js/upload_data.js"></script>
         <script src="/static/js/upload_graph.js"></script>
